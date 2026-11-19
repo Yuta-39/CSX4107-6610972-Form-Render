@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML入門-フォームの作成</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- rel="stylesheet"しないと外部からcssファイルを読み取れなくなるよ-->
+
+
+</head>
+
+<body class="body">
+
+    <form action="https://teach-backend-fawn.vercel.app/api/product" method="POST" enctype="multipart/form-data">
+
+
+        <!-- BLOCK-General Info -->
+
+        <fieldset class="frame">
+            <legend class="title">General Info</legend>
+
+            <!-- Name -->
+
+            <!-- for と id は目印として同じ値にする -->
+            <!-- name=""は入力した値とウェブ上で認識される -->
+
+            <div class="form_row">
+                <label for="name" class="form_label"> Name </label>
+                <input id="name" name="itemName" type="text">
+
+            </div>
+
+            <!-- Description -->
+
+            <div class="form_row">
+                <label for="description" class="form_label"> Description </label>
+                <textarea row="5" cols="65" id="description" name="itemDescription" class="textarea"></textarea>
+
+            </div>
+
+            <!-- Category -->
+
+            <div class="form_row">
+                <label for="category" class="form_label"> Category </label>
+                <select id="category" name="category">
+
+                    <div class="options-group">
+                        <option value="notSpecified" selected>notSpecified</option>
+                        <option value="consumption">consumption</option>
+                        <option value="household">household</option>
+                        <option value="electronic">electronic</option>
+                        <option value="gadget">gadget</option>
+
+                    </div>
+
+                </select>
+
+            </div>
+
+        </fieldset>
+
+
+        <!-- BLOCK-misc -->
+
+        <fieldset class="frame">
+            <legend class="title">Misc</legend>
+
+
+
+            <!-- Inventory Amount -->
+
+            <div class="form_row">
+                <label for="inventory_amount" class="form_label"> Inventory Amount </label>
+                <input id="inventory_amount" name="inventoryAmount" type="text">
+
+            </div>
+
+            <!-- List Prices -->
+
+            <div class="form_row">
+                <label for="list_price" class="form_label"> List Price </label>
+                <input id="list_price" name="listPrice" type="text" inputmode="numeric">
+
+            </div>
+
+            <!-- Available Stores -->
+
+            <div class="form_row">
+
+                <label for="available_stores"> Available Stores </label>
+
+                <div class="options-group">
+                    <input id="available_stores_1" name="availableStores[]" value="Bangkok" type="checkbox">
+                    <label for="available_stores_1" class="form_label"> Bangkok</label>
+
+                    <input id="available_stores_2" name="availableStores[]" value="Pattaya" type="checkbox">
+                    <label for="available_stores_2" class="form_label"> Pattaya</label>
+
+                    <input id="available_stores_1" name="availableStores[]" value="Phuket" type="checkbox">
+                    <label for="available_stores_1" class="form_label"> Phuket</label>
+
+                </div>
+
+            </div>
+
+            <div class="form_row">
+                <label for="available_stores"> Available Stores </label>
+
+                <div class="options-group">
+                    <input id="active" name="status" type="radio">
+                    <label for="active" class="form_label"> Active</label>
+
+                    <input id="inactive" name="status" type="radio">
+                    <label for="inactive" class="form_label"> Inactive</label>
+
+                </div>
+
+
+            </div>
+
+
+
+        </fieldset>
+
+
+        <!-- BLOCK-Staff -->
+
+        <fieldset class="frame">
+            <legend class="title">Staff</legend>
+
+
+
+            <!-- Staff Email -->
+
+            <div class="form_row">
+                <label for="staff_email" class="form_label"> Staff Email </label>
+                <input id="staff_email" name="staffEmail" type="email">
+
+            </div>
+
+
+        </fieldset>
+
+        <div class="submit_area">
+            <button type="submit" class="submit_button">Submit Form</button>
+
+        </div>
+
+    </form>
+</body>
+
+</html>
